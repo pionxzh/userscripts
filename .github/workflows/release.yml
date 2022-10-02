@@ -49,6 +49,7 @@ jobs:
           git config --local user.name github-actions[bot]
           git config --global core.autocrlf true
           git config --global core.safecrlf false
+          git add .
           git commit -m "CI build" -a
         continue-on-error: true
 
