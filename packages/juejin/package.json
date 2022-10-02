@@ -1,0 +1,24 @@
+{
+  "name": "@pionxzh/juejin",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "掘金Plus - 去广告 · 去弹窗 · 还你清爽的阅读体验",
+  "author": "pionxzh",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "test:type": "tsc --noEmit",
+    "test": "pnpm run test:type",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@pionxzh/vite-plugin-define-env": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "vite": "^3.1.4",
+    "vite-plugin-monkey": "^2.5.1"
+  }
+}

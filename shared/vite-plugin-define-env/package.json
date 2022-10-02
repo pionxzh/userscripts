@@ -1,0 +1,43 @@
+{
+  "name": "@pionxzh/vite-plugin-define-env",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "author": "pionxzh",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup index.ts --dts --format cjs,esm --clean",
+    "test:type": "tsc --noEmit",
+    "test": "pnpm run test:type",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.0.0",
+    "vite": ">=2.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "dotenv": "^16.0.3",
+    "fast-glob": "^3.2.12"
+  },
+  "devDependencies": {
+    "tsup": "^6.2.3",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.4"
+  }
+}

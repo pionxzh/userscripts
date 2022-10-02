@@ -1,0 +1,34 @@
+.tablead, /* 小红点 */
+.creator-item, /* 创作者中心 */
+.vip-entry, /* vip会员 */
+.special-activity, /* 宣传小块 */
+.sidebar-bd-entry, /* Side Banner */
+.app-download-sidebar-block,
+.login-guide-popup,
+.recommend-box, /* 有点忘了是什么。。*/
+button[title="建议反馈"] {
+    display: none !important;
+}
+
+body[data-juejin-page="main"] {
+    .item-login-wrap,
+    .banner-block,
+    .sticky-block,
+    .entry-list > .item > .advertisement {
+        display: none !important;
+    }
+}
+
+body[data-juejin-page="article"] {
+    .wechat-banner, /* 加入wx */
+    .extension-banner, /* 安装掘金浏览器插件 */
+    .guide-collect-popover /* 收藏 popover */ {
+        display: none !important;
+    }
+}
+
+body[data-juejin-page="search"] {
+    a.search[data-book-id] /* 小册推广 */ {
+        display: none !important;
+    }
+}

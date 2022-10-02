@@ -1,0 +1,33 @@
+{
+  "name": "@pionxzh/userscripts",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@7.12.2",
+  "author": "pionxzh",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "commit": "cz",
+    "clean": "rimraf ./dist",
+    "release:ci": "cpy packages/**/dist/*.user.js dist --flat"
+  },
+  "devDependencies": {
+    "@pionxzh/eslint-config": "workspace:*",
+    "@types/node": "^18.7.23",
+    "commitizen": "^4.2.5",
+    "cpy-cli": "^4.2.0",
+    "eslint": "^8.24.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.55.0",
+    "turbo": "^1.5.5",
+    "typescript": "^4.6.4"
+  }
+}
