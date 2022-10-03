@@ -5,6 +5,7 @@ module.exports = {
         es6: true,
     },
     plugins: [
+        'html',
         '@typescript-eslint',
     ],
     extends: [

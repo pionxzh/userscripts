@@ -26,7 +26,7 @@ importers:
 
   packages/juejin:
     specifiers:
-      '@pionxzh/vite-plugin-define-env': workspace:^1.0.0
+      '@pionxzh/vite-plugin-define-env': workspace:*
       vite: ^3.1.4
       vite-plugin-monkey: ^2.5.1
     dependencies:
@@ -41,6 +41,7 @@ importers:
       '@typescript-eslint/parser': ^5.38.1
       eslint: ^8.24.0
       eslint-config-airbnb-base: ^15.0.0
+      eslint-plugin-html: ^7.1.0
       eslint-plugin-import: ^2.26.0
       eslint-plugin-jsonc: ^2.4.0
       eslint-plugin-markdown: ^3.0.0
@@ -55,6 +56,7 @@ importers:
       jsonc-eslint-parser: 2.1.0
     devDependencies:
       eslint: 8.24.0
+      eslint-plugin-html: 7.1.0
       eslint-plugin-markdown: 3.0.0_eslint@8.24.0
       typescript: 4.8.4
 
@@ -1381,6 +1383,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+
+  /eslint-plugin-html/7.1.0:
+    resolution: {integrity: sha512-fNLRraV/e6j8e3XYOC9xgND4j+U7b1Rq+OygMlLcMg+wI/IpVbF+ubQa3R78EjKB9njT6TQOlcK5rFKBVVtdfg==}
+    dependencies:
+      htmlparser2: 8.0.1
+    dev: true
 
   /eslint-plugin-import/2.26.0_gofx6msuqd4luqedfouzks2s4u:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
