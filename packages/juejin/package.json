@@ -7,7 +7,7 @@
   "author": "pionxzh",
   "license": "MIT",
   "scripts": {
-    "dev": "vite build --watch",
+    "dev": "vite",
     "build": "vite build",
     "test:type": "tsc --noEmit",
     "test": "pnpm run test:type",
@@ -15,7 +15,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@pionxzh/vite-plugin-define-env": "workspace:^1.0.0"
+    "@pionxzh/vite-plugin-define-env": "workspace:*"
   },
   "devDependencies": {
     "vite": "^3.1.4",

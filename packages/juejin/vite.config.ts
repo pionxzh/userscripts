@@ -31,6 +31,9 @@ export default defineConfig({
                 fileName: 'juejin.user.js',
                 minifyCss: false,
             },
+            server: {
+                open: true,
+            },
         }),
     ],
 })
