@@ -1,0 +1,22 @@
+// Prevent scroll lock
+body {
+    overflow: unset !important;
+}
+
+// Remove login banner
+.__portal > div:not(:has(div[data-testid])) {
+    display: none;
+}
+
+// Remove ADs
+aside > div[style*="min-height:"],
+section div[data-key|="ad"],
+div[id^="div-gpt-ad"] {
+    display: none;
+}
+
+// Move FAQ to the bottom of the page
+aside > div:last-child {
+    position: absolute;
+    bottom: 0;
+}

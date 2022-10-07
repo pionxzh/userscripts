@@ -18,3 +18,13 @@ pionxzh/userscripts
 | Greasyfork 源 | GitHub 源                                                                              |
 | ------------- | -------------------------------------------------------------------------------------- |
 | [安装](https://greasyfork.org/scripts/452385-%E6%8E%98%E9%87%91-plus)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/juejin.user.js) |
+
+### [Dcard 助手](https://greasyfork.org/scripts/452634-dcard-%E5%8A%A9%E6%89%8B)
+  - 移除登入彈窗
+  - 移除下方登入提示
+  - 移除所有廣告
+
+| Greasyfork 源 | GitHub 源                                                                              |
+| ------------- | -------------------------------------------------------------------------------------- |
+| [安装](https://greasyfork.org/scripts/452634-dcard-%E5%8A%A9%E6%89%8B)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/dcard.user.js) |
+
