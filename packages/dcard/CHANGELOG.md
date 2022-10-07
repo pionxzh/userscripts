@@ -1,0 +1,8 @@
+# Changelog
+
+## [1.1.0](https://github.com/pionxzh/userscripts/compare/dcard-v1.0.0...dcard-v1.1.0) (2022-10-07)
+
+
+### Features
+
+* **dcard:** 去除廣告 去除登入彈窗 ([a87e923](https://github.com/pionxzh/userscripts/commit/a87e923015cfde5b5f7ab2bba2aa0322bead93af))
