@@ -9,22 +9,30 @@
   "engines": {
     "node": ">=16.0.0"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "test": "turbo run test",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
-    "commit": "cz",
+    "cz": "cz",
     "clean": "rimraf ./dist",
-    "release:ci": "cpy packages/**/dist/*.user.js dist --flat"
+    "release:ci": "cpy packages/**/dist/*.user.js dist --flat",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@pionxzh/eslint-config": "workspace:*",
     "@types/node": "^18.7.23",
     "commitizen": "^4.2.5",
     "cpy-cli": "^4.2.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.24.0",
+    "husky": "^8.0.0",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
     "turbo": "^1.5.5",
