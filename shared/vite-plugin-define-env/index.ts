@@ -1,8 +1,8 @@
-import fs from 'fs'
 import path from 'path'
 import chalk from 'chalk'
 import dotenv from 'dotenv'
 import fg from 'fast-glob'
+import fse from 'fs-extra'
 import type { Plugin } from 'vite'
 
 interface EnvDefinePluginConfig {
@@ -87,7 +87,7 @@ export const envDefinePlugin = (config: EnvConfigInput = {}): Plugin => {
 }
 
 function loadEnv(filePath: string, config: EnvDefinePluginConfig) {
-    const envConfig = fs.existsSync(filePath) ? dotenv.parse(fs.readFileSync(filePath)) : {}
+    const envConfig = fse.existsSync(filePath) ? dotenv.parse(fse.readFileSync(filePath)) : {}
     const result = { ...preprocessEnv(envConfig), ...config.customize(envConfig) }
 
     for (const [key, value] of Object.entries(result)) process.env[key] = value
@@ -122,12 +122,12 @@ function generateFile(pluginConfig: EnvDefinePluginConfig, customizedConfig: Rec
     if (pluginConfig.metaPath) {
         const metaResult = Object.keys(customizedConfig).reduce((acc, key) => ({ ...acc, [key]: true }), {})
         const metaText = JSON.stringify(metaResult, null, 2)
-        fs.writeFileSync(resolve(pluginConfig.metaPath), metaText)
+        fse.outputFileSync(resolve(pluginConfig.metaPath), metaText)
     }
 
     if (pluginConfig.interfacePath) {
         const interfacePath = resolve(pluginConfig.interfacePath)
-        const originalInterfaceContent = fs.existsSync(interfacePath) ? fs.readFileSync(interfacePath, 'utf8') : ''
+        const originalInterfaceContent = fse.existsSync(interfacePath) ? fse.readFileSync(interfacePath, 'utf8') : ''
         const newInterfaceContent = `/* eslint-disable */
 
 ${Object.entries(customizedConfig).map(([key, value]) => `declare const ${key}: ${typeof value};`).join('\n')}
@@ -140,6 +140,8 @@ ${Object.entries(customizedConfig).map(([key, value]) => `            ${key}: ${
     }
 }`
 
-        if (originalInterfaceContent !== newInterfaceContent) fs.writeFileSync(resolve(pluginConfig.interfacePath), newInterfaceContent)
+        if (originalInterfaceContent !== newInterfaceContent) {
+            fse.outputFileSync(resolve(pluginConfig.interfacePath), newInterfaceContent)
+        }
     }
 }
