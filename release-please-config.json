@@ -2,7 +2,11 @@
   "pull-request-header": ":robot: I have created a release",
   "pull-request-title-pattern": "chore: release${component} ${version}",
   "packages": {
-    "packages/dcard": {},
-    "packages/juejin": {}
+    "packages/dcard": {
+      "component": "dcard"
+    },
+    "packages/juejin": {
+      "component": "juejin"
+    }
   }
 }
