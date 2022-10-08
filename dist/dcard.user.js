@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcard 助手
 // @namespace    pionxzh
-// @version      1.0.0
+// @version      1.1.0
 // @author       pionxzh
 // @description  完整去廣告、移除登入彈窗、隱藏下方登入 Banner
 // @license      MIT
