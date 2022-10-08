@@ -23,3 +23,5 @@ shared/**/dist
 *.njsproj
 *.sln
 *.sw?
+
+tsconfig.tsbuildinfo

@@ -7,7 +7,7 @@ import packageJson from './package.json'
 export default defineConfig({
     plugins: [
         envDefinePlugin({
-            interfacePath: './src/types/env.d.ts',
+            interfacePath: './src/env.d.ts',
             customize: () => ({
                 __VERSION__: packageJson.version,
             }),
