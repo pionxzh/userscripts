@@ -33,9 +33,13 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.24.0",
     "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
     "turbo": "^1.5.5",
     "typescript": "^4.6.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "pnpm exec eslint"
   }
 }
