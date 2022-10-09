@@ -40,4 +40,4 @@ pionxzh/userscripts
 
 | Greasyfork 源 | GitHub 源                                                                              |
 | ------------- | -------------------------------------------------------------------------------------- |
-| [安装](https://greasyfork.org/scripts/452766-%E7%9F%A5%E4%B9%8E%E5%8A%A9%E6%89%8B)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/zhihu.user.js) |
+| [安装](https://greasyfork.org/scripts/383827-%E7%9F%A5%E4%B9%8E%E5%8A%A9%E6%89%8B)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/zhihu.user.js) |
