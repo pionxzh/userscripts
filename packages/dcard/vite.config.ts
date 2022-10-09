@@ -8,7 +8,7 @@ export default defineConfig({
         monkey({
             entry: 'src/main.ts',
             userscript: {
-                name: 'Dcard 助手',
+                name: packageJson.title,
                 author: packageJson.author,
                 namespace: packageJson.author,
                 description: packageJson.description,

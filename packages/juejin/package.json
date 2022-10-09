@@ -3,6 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "title": "掘金 Plus",
   "description": "掘金Plus - 去广告 · 去弹窗 · 还你清爽的阅读体验",
   "author": "pionxzh",
   "license": "MIT",
