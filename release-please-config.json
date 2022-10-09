@@ -7,6 +7,9 @@
     },
     "packages/juejin": {
       "component": "juejin"
+    },
+    "packages/zhihu": {
+      "component": "zhihu"
     }
   }
 }

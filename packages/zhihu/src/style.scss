@@ -1,0 +1,4 @@
+// 屏蔽搜索结果的 Live 讲座 AD
+div.SearchResult-Card:has(div[data-za-detail-view-path-is_ad="true"]) {
+    display: none !important;
+}

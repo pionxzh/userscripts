@@ -28,3 +28,16 @@ pionxzh/userscripts
 | ------------- | -------------------------------------------------------------------------------------- |
 | [安装](https://greasyfork.org/scripts/452634-dcard-%E5%8A%A9%E6%89%8B)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/dcard.user.js) |
 
+### [知乎助手](https://greasyfork.org/scripts/452634-dcard-%E5%8A%A9%E6%89%8B)
+  - 黑名单屏蔽
+    - 回答
+    - 评论
+    - 搜索结果
+  - 去广告
+    - Live 讲座
+    - 盐选专栏
+    - 视频回答
+
+| Greasyfork 源 | GitHub 源                                                                              |
+| ------------- | -------------------------------------------------------------------------------------- |
+| [安装](https://greasyfork.org/scripts/452766-%E7%9F%A5%E4%B9%8E%E5%8A%A9%E6%89%8B)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/zhihu.user.js) |
