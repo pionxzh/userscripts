@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         知乎助手
 // @namespace    pionxzh
-// @version      1.1.0
+// @version      1.1.1
 // @author       pionxzh
-// @description  自动屏蔽来自黑名单的所有评论与文章
+// @description  自动屏蔽黑名单的所有评论与文章 | 去除知乎盐选 | 去除Live | 自动收起回答 | 取消外链跳转
 // @license      MIT
 // @icon         https://static.zhihu.com/heifetz/favicon.ico
 // @match        *.zhihu.com/*
@@ -137,18 +137,22 @@ div.SearchResult-Card:has(div.AuthorInfo > meta[itemprop="name"][content="${user
     if (!url.pathname.startsWith("/question/"))
       return;
     const answerWeakSet = /* @__PURE__ */ new WeakSet();
-    const collapseButtonSelector = 'div.List-item button[data-zop-retract-question="true"]';
+    const expandButtonSelector = "div.List-item button.ContentItem-expandButton";
+    const collapseButtonSelector = 'div.QuestionAnswer-content button[data-zop-retract-question="true"], div.List-item button[data-zop-retract-question="true"]';
     const collapseAnswer = (el) => {
-      const answer = el.closest("div.List-item");
+      const answer = el.closest("div.QuestionAnswer-content, div.List-item");
       if (!answer)
         return;
       if (answerWeakSet.has(answer))
         return;
+      answerWeakSet.add(answer);
       if (answer.offsetHeight < 400)
         return;
-      answerWeakSet.add(answer);
+      if (el.classList.contains("ContentItem-expandButton"))
+        return;
       el.click();
     };
+    document.querySelectorAll(expandButtonSelector).forEach(collapseAnswer);
     document.querySelectorAll(collapseButtonSelector).forEach(collapseAnswer);
     sentinel__default.default.on(collapseButtonSelector, collapseAnswer);
   }
