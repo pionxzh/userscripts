@@ -15,18 +15,18 @@ pionxzh/userscripts
   - 去除烦人的小红点
   - 去除 VIP 提示
 
-| Greasyfork 源 | GitHub 源                                                                              |
-| ------------- | -------------------------------------------------------------------------------------- |
-| [安装](https://greasyfork.org/scripts/452385-%E6%8E%98%E9%87%91-plus)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/juejin.user.js) |
+| Greasyfork 源                                                         | GitHub 源                                                                              |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [安装](https://greasyfork.org/scripts/452385-%E6%8E%98%E9%87%91-plus) | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/juejin.user.js) |
 
 ### [Dcard 助手](https://greasyfork.org/scripts/452634-dcard-%E5%8A%A9%E6%89%8B)
   - 移除登入彈窗
   - 移除下方登入提示
   - 完美移除所有廣告 (如果見到新的請反饋)
 
-| Greasyfork 源 | GitHub 源                                                                              |
-| ------------- | -------------------------------------------------------------------------------------- |
-| [安装](https://greasyfork.org/scripts/452634-dcard-%E5%8A%A9%E6%89%8B)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/dcard.user.js) |
+| Greasyfork 源                                                          | GitHub 源                                                                             |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [安装](https://greasyfork.org/scripts/452634-dcard-%E5%8A%A9%E6%89%8B) | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/dcard.user.js) |
 
 ### [知乎助手](https://greasyfork.org/scripts/452634-dcard-%E5%8A%A9%E6%89%8B)
   - 黑名单屏蔽
@@ -37,7 +37,10 @@ pionxzh/userscripts
     - Live 讲座
     - 盐选专栏
     - 视频回答
+    - 赞赏区块
+  - 自动收起回答 (问题页)
+  - 取消外链跳转
 
-| Greasyfork 源 | GitHub 源                                                                              |
-| ------------- | -------------------------------------------------------------------------------------- |
-| [安装](https://greasyfork.org/scripts/383827-%E7%9F%A5%E4%B9%8E%E5%8A%A9%E6%89%8B)      | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/zhihu.user.js) |
+| Greasyfork 源                                                                      | GitHub 源                                                                             |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [安装](https://greasyfork.org/scripts/383827-%E7%9F%A5%E4%B9%8E%E5%8A%A9%E6%89%8B) | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/zhihu.user.js) |

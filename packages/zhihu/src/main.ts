@@ -93,16 +93,21 @@ function autoCollapseAnswers() {
     if (!url.pathname.startsWith('/question/')) return
 
     const answerWeakSet = new WeakSet()
-    const collapseButtonSelector = 'div.List-item button[data-zop-retract-question="true"]'
+
+    const expandButtonSelector = 'div.List-item button.ContentItem-expandButton'
+    const collapseButtonSelector = 'div.QuestionAnswer-content button[data-zop-retract-question="true"], div.List-item button[data-zop-retract-question="true"]'
     const collapseAnswer = (el: HTMLButtonElement) => {
-        const answer = el.closest<HTMLDivElement>('div.List-item')
+        const answer = el.closest<HTMLDivElement>('div.QuestionAnswer-content, div.List-item')
         if (!answer) return
         if (answerWeakSet.has(answer)) return
+        answerWeakSet.add(answer)
         if (answer.offsetHeight < 400) return
 
-        answerWeakSet.add(answer)
+        if (el.classList.contains('ContentItem-expandButton')) return
         el.click()
     }
+
+    document.querySelectorAll<HTMLButtonElement>(expandButtonSelector).forEach(collapseAnswer)
     document.querySelectorAll<HTMLButtonElement>(collapseButtonSelector).forEach(collapseAnswer)
     sentinel.on(collapseButtonSelector, collapseAnswer)
 }
