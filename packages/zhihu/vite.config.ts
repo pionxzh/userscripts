@@ -5,6 +5,10 @@ import packageJson from './package.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    // https://github.com/lisonge/vite-plugin-monkey/issues/10#issuecomment-1207264978
+    esbuild: {
+        charset: 'utf8',
+    },
     plugins: [
         envDefinePlugin({
             interfacePath: './src/env.d.ts',

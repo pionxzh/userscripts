@@ -1,4 +1,28 @@
+// 屏蔽搜索结果
+div.SearchResult-Card.__BLOCKED__ {
+    display: none !important;
+}
+
 // 屏蔽搜索结果的 Live 讲座 AD
 div.SearchResult-Card:has(div[data-za-detail-view-path-is_ad="true"]) {
+    display: none !important;
+}
+
+// 本回答节选自盐选专栏，有助于解答该问题
+div.List-item:has(.KfeCollection-AnswerTopCard-Container) {
+    display: none !important;
+}
+
+// 屏蔽视频
+div.List-item:has(.VideoAnswerPlayer) {
+    display: none !important;
+}
+
+// 赞赏
+div.List-item .Reward {
+    display: none !important;
+}
+
+footer.Footer {
     display: none !important;
 }
