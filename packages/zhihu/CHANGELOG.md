@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/pionxzh/userscripts/compare/zhihu-v1.1.0...zhihu-v1.1.1) (2022-10-10)
+
+
+### Bug Fixes
+
+* **zhihu:** 修正部分回答会收合两次的问题 ([1424761](https://github.com/pionxzh/userscripts/commit/1424761cb74e501bedb21dfcfbd6baaa78937e20))
+
 ## [1.1.0](https://github.com/pionxzh/userscripts/compare/zhihu-v1.0.0...zhihu-v1.1.0) (2022-10-10)
 
 
