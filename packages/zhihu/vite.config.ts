@@ -19,13 +19,14 @@ export default defineConfig({
         monkey({
             entry: 'src/main.ts',
             userscript: {
-                name: packageJson.title,
-                author: packageJson.author,
-                namespace: packageJson.author,
-                description: packageJson.description,
-                license: packageJson.license,
-                match: '*.zhihu.com/*',
-                icon: 'https://static.zhihu.com/heifetz/favicon.ico',
+                'name': packageJson.title,
+                'author': packageJson.author,
+                'namespace': packageJson.author,
+                'description': packageJson.description,
+                'license': packageJson.license,
+                'match': '*.zhihu.com/*',
+                'icon': 'https://static.zhihu.com/heifetz/favicon.ico',
+                'run-at': 'document-start',
             },
             build: {
                 fileName: 'zhihu.user.js',

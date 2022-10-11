@@ -2,37 +2,37 @@ import sentinel from 'sentinel-js'
 import { getBlockedUser } from './api'
 import './style.scss'
 
-const url = new URL(window.location.href);
+const url = new URL(window.location.href)
 
-(() => {
-    // 清理标题的 `(x 条消息 / x 封私信)` 和 ` - 知乎`
-    purifyDocumentTitle()
+// 清理标题的 `(x 条消息 / x 封私信)` 和 ` - 知乎`
+purifyDocumentTitle()
 
-    // 屏蔽黑名单用户
-    blockByBlackList()
+// 屏蔽黑名单用户
+blockByBlackList()
 
-    // 屏蔽視頻回答
-    blockVideoAnswer()
+// 屏蔽視頻回答
+blockVideoAnswer()
 
-    // 自动收起回答 (问题页)
-    autoCollapseAnswers()
+// 自动收起回答 (问题页)
+autoCollapseAnswers()
 
-    // 取消外链跳转
-    removeExternalLinkRedirection()
-})()
+// 取消外链跳转
+removeExternalLinkRedirection()
 
 // 清理标题的 `(x 条消息 / x 封私信)` 和 ` - 知乎`
 function purifyDocumentTitle() {
-    const purify = () => {
-        const newTitle = document.title
-            .replace(/^\((\d{1,2}\+? 条消息)?( \/ )?(\d{1,2}\+? 封私信)?\) /, '')
-            .replace(/ - 知乎$/, '')
-        document.title = newTitle
-    }
+    const title = document.title
+        .replace(/^\((\d{1,2}\+? 条消息)?( \/ )?(\d{1,2}\+? 封私信)?\) /, '')
+        .replace(/^\((\d{1,2}\+? 封私信)?( \/ )?(\d{1,2}\+? 条消息)?\) /, '')
+        .replace(/ - 知乎$/, '')
+    document.title = title
 
-    purify()
-    window.addEventListener('focus', purify)
-    window.addEventListener('visibilitychange', purify)
+    const titleEl = document.head.querySelector('title')!
+    const mutationObserver = new MutationObserver(() => {
+        if (document.title === title) return
+        document.title = title
+    })
+    mutationObserver.observe(titleEl, { childList: true })
 }
 
 // 屏蔽黑名单用户
