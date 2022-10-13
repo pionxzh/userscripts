@@ -1,6 +1,7 @@
 import sentinel from 'sentinel-js'
 import { getBlockedUser } from './api'
 import './style.scss'
+import { onloadSafe } from './utils'
 
 const url = new URL(window.location.href)
 
@@ -15,6 +16,9 @@ blockVideoAnswer()
 
 // 自动收起回答 (问题页)
 autoCollapseAnswers()
+
+// 调整相关问题样式 (问题页)
+adjustRelatedQuestions()
 
 // 取消外链跳转
 removeExternalLinkRedirection()
@@ -110,6 +114,65 @@ function autoCollapseAnswers() {
     document.querySelectorAll<HTMLButtonElement>(expandButtonSelector).forEach(collapseAnswer)
     document.querySelectorAll<HTMLButtonElement>(collapseButtonSelector).forEach(collapseAnswer)
     sentinel.on(collapseButtonSelector, collapseAnswer)
+}
+
+// 调整相关问题样式 (问题页)
+function adjustRelatedQuestions() {
+    if (!url.pathname.startsWith('/question/')) return
+
+    onloadSafe(() => {
+        const questionMain = document.querySelector<HTMLDivElement>('div.Question-main')
+        const relatedQuestions = document.querySelector<HTMLDivElement>('div.Question-sideColumn div[aria-label="相关问题"]')
+        const inviteBtn = document.querySelector<HTMLButtonElement>('div.QuestionHeaderActions button.Button')
+        if (!questionMain || !relatedQuestions || !inviteBtn) return
+
+        relatedQuestions.style.display = 'none'
+        relatedQuestions.style.position = 'absolute'
+        relatedQuestions.style.border = '1px solid #ebebeb'
+        relatedQuestions.style.boxShadow = '0 5px 20px rgba(18,18,18,.1)'
+        questionMain.after(relatedQuestions)
+
+        const relatedQuestionBtn = document.createElement('button')
+        relatedQuestionBtn.textContent = '相关问题'
+        relatedQuestionBtn.classList.add('Button', 'Button--grey', 'Button--withIcon', 'Button--withLabel')
+        relatedQuestionBtn.style.marginLeft = '0'
+        relatedQuestionBtn.style.marginRight = '8px'
+        inviteBtn.insertAdjacentElement('afterend', relatedQuestionBtn)
+
+        const iconHtml = '&ZeroWidthSpace;<svg width="12" height="12" viewBox="0 0 24 24" data-new-api="OpposeFill24" data-old-api="TriangleDown" class="Zi Zi--TriangleDown Button-zi" fill="currentColor"><path d="M13.792 20.319c-.781 1.406-2.803 1.406-3.584 0L2.418 6.296c-.76-1.367.228-3.046 1.791-3.046h15.582c1.563 0 2.55 1.68 1.791 3.046l-7.79 14.023z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>'
+        const icon = document.createElement('span')
+        icon.style.display = 'inline-flex'
+        icon.style.alignItems = 'center'
+        icon.innerHTML = iconHtml
+        relatedQuestionBtn.insertAdjacentElement('afterbegin', icon)
+
+        let isHoveringBtn = false
+        let isHoveringRelatedQuestions = false
+        const onLeave = () => {
+            setTimeout(() => {
+                if (!isHoveringBtn && !isHoveringRelatedQuestions) {
+                    relatedQuestions.style.display = 'none'
+                }
+            }, 200)
+        }
+        relatedQuestionBtn.addEventListener('mouseenter', () => {
+            relatedQuestions.style.display = 'block'
+            relatedQuestions.style.top = `${relatedQuestionBtn.offsetTop + relatedQuestionBtn.offsetHeight}px`
+            relatedQuestions.style.left = `${relatedQuestionBtn.offsetLeft}px`
+            isHoveringBtn = true
+        })
+        relatedQuestionBtn.addEventListener('mouseleave', () => {
+            isHoveringBtn = false
+            onLeave()
+        })
+        relatedQuestions.addEventListener('mouseenter', () => {
+            isHoveringRelatedQuestions = true
+        })
+        relatedQuestions.addEventListener('mouseleave', () => {
+            isHoveringRelatedQuestions = false
+            onLeave()
+        })
+    })
 }
 
 // 取消外链跳转

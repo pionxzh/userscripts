@@ -26,3 +26,15 @@ div.List-item .Reward {
 footer.Footer {
     display: none !important;
 }
+
+.Question-mainColumn {
+    width: unset !important;
+
+    & .AuthorInfo {
+        max-width: unset !important;
+    }
+}
+
+.Question-sideColumn {
+    display: none !important;
+}
