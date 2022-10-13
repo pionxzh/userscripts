@@ -32,7 +32,7 @@ export default defineConfig({
                 fileName: 'zhihu.user.js',
                 minifyCss: false,
                 externalGlobals: {
-                    'sentinel-js': cdn.cdnjs('sentinel', '/sentinel.min.js'),
+                    'sentinel-js': cdn.cdnjs('sentinel', 'sentinel.min.js'),
                 },
             },
             server: {
