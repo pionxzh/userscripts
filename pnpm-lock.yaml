@@ -33,32 +33,32 @@ importers:
   packages/dcard:
     specifiers:
       vite: ^3.1.4
-      vite-plugin-monkey: ^2.7.0
+      vite-plugin-monkey: ^2.7.3
     devDependencies:
       vite: 3.1.4
-      vite-plugin-monkey: 2.7.0_vite@3.1.4
+      vite-plugin-monkey: 2.7.3_vite@3.1.4
 
   packages/juejin:
     specifiers:
       '@pionxzh/vite-plugin-define-env': workspace:*
       vite: ^3.1.4
-      vite-plugin-monkey: ^2.7.0
+      vite-plugin-monkey: ^2.7.3
     dependencies:
       '@pionxzh/vite-plugin-define-env': link:../../shared/vite-plugin-define-env
     devDependencies:
       vite: 3.1.4
-      vite-plugin-monkey: 2.7.0_vite@3.1.4
+      vite-plugin-monkey: 2.7.3_vite@3.1.4
 
   packages/zhihu:
     specifiers:
       '@pionxzh/vite-plugin-define-env': workspace:*
       sentinel-js: ^0.0.5
       vite: ^3.1.4
-      vite-plugin-monkey: ^2.7.0
+      vite-plugin-monkey: ^2.7.3
     dependencies:
       '@pionxzh/vite-plugin-define-env': link:../../shared/vite-plugin-define-env
       sentinel-js: 0.0.5
-      vite-plugin-monkey: 2.7.0_vite@3.1.4
+      vite-plugin-monkey: 2.7.3_vite@3.1.4
     devDependencies:
       vite: 3.1.4
 
@@ -2595,17 +2595,6 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /node-fetch/2.6.7:
-    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
-
   /normalize-package-data/3.0.3:
     resolution: {integrity: sha512-p2W1sgqij3zMMyRC067Dg16bfzVH+w7hyegmpIvZ4JNjqtGOVAIvLmjBx3yP7YTe9vKJgkoNOPjwQGogDoMXFA==}
     engines: {node: '>=10'}
@@ -3323,9 +3312,6 @@ packages:
     dependencies:
       is-number: 7.0.0
 
-  /tr46/0.0.3:
-    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-
   /tr46/1.0.1:
     resolution: {integrity: sha512-dTpowEjclQ7Kgx5SdBkqRzVhERQXov8/l9Ft9dVM9fmg0W0KQSVaXX9T4i6twCPNtYiZM53lpSSUAwJbFPOHxA==}
     dependencies:
@@ -3567,8 +3553,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-monkey/2.7.0_vite@3.1.4:
-    resolution: {integrity: sha512-jHYKW+L0twUyIork10EMtxBfkTWMHBs2uPF4SWm35haT8HIHzdcioclMOf+1ByBRHLEr47LQR8bJj7o7uSJfbQ==}
+  /vite-plugin-monkey/2.7.3_vite@3.1.4:
+    resolution: {integrity: sha512-9AKdOmscYzGHk+FQJhYm8kp/ddg0itLMFNF/2A1DO4rqGpgg339+34EQpzNafZaK1jR6mL3vJP/J7XzfE2k5PQ==}
     engines: {node: ^14.18 || >= 16, pnpm: '>=6'}
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0
@@ -3577,12 +3563,10 @@ packages:
       detect-port: 1.5.1
       htmlparser2: 8.0.1
       mrmime: 1.0.1
-      node-fetch: 2.6.7
       open: 8.4.0
       picocolors: 1.0.0
       vite: 3.1.4
     transitivePeerDependencies:
-      - encoding
       - supports-color
 
   /vite/3.1.4:
@@ -3617,18 +3601,9 @@ packages:
       defaults: 1.0.3
     dev: true
 
-  /webidl-conversions/3.0.1:
-    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-
   /webidl-conversions/4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
     dev: true
-
-  /whatwg-url/5.0.0:
-    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
-    dependencies:
-      tr46: 0.0.3
-      webidl-conversions: 3.0.1
 
   /whatwg-url/7.1.0:
     resolution: {integrity: sha512-WUu7Rg1DroM7oQvGWfOiAK21n74Gg+T4elXEQYkOhtyLeWiJFoOGLXPKI/9gzIie9CtwVLm8wtw6YJdKyxSjeg==}
