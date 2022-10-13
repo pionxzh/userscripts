@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/pionxzh/userscripts/compare/zhihu-v1.1.1...zhihu-v1.2.0) (2022-10-13)
+
+
+### Features
+
+* **zhihu:** 加快脚本载入时机 ([916d3c2](https://github.com/pionxzh/userscripts/commit/916d3c2153c4e5c223ce8a27b0356a8f769b81fd))
+* **zhihu:** 宽版阅读、相关问题收合進一個按钮 ([17f22d2](https://github.com/pionxzh/userscripts/commit/17f22d28d3be7767c221c0c16dda12db81b9f471))
+
+
+### Bug Fixes
+
+* **zhihu:** remove redundant "/" in CDN path ([f0b97ea](https://github.com/pionxzh/userscripts/commit/f0b97ea0f5e522e59cf8341179382248a5cec100))
+
 ## [1.1.1](https://github.com/pionxzh/userscripts/compare/zhihu-v1.1.0...zhihu-v1.1.1) (2022-10-10)
 
 

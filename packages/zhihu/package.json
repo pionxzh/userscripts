@@ -1,7 +1,7 @@
 {
   "name": "@pionxzh/zhihu",
   "type": "module",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "private": true,
   "title": "知乎助手",
   "description": "自动屏蔽黑名单的所有评论与文章 | 去除知乎盐选 | 去除Live | 自动收起回答 | 取消外链跳转",
