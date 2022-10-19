@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name               Duo Security Auto Push
 // @name:en            Duo Security Auto Push
-// @name:zh_cn         Duo Security 自动推送
-// @name:zh_tw         Duo Security 自動推送
+// @name:zh-CN         Duo Security 自动推送
+// @name:zh-TW         Duo Security 自動推送
 // @namespace          pionxzh
-// @version            1.0.0
+// @version            1.0.1
 // @author             pionxzh
 // @description        Press "Send Me a Push" automatically for you
 // @description:en     Press "Send Me a Push" automatically for you
-// @description:zh_cn  自动按下 "Send Me a Push"
-// @description:zh_tw  自動按下 "Send Me a Push"
+// @description:zh-CN  自动按下 "Send Me a Push"
+// @description:zh-TW  自動按下 "Send Me a Push"
 // @license            MIT
 // @icon               https://www.google.com/s2/favicons?sz=64&domain=duosecurity.com
 // @match              https://*.duosecurity.com/frame/prompt?sid=*
