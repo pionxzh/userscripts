@@ -10,6 +10,9 @@
     },
     "packages/zhihu": {
       "component": "zhihu"
+    },
+    "packages/duo": {
+      "component": "duo"
     }
   }
 }

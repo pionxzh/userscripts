@@ -1,0 +1,33 @@
+{
+  "name": "@pionxzh/duo",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Press \"Send Me a Push\" automatically for you",
+  "scriptName": {
+    "": "Duo Security Auto Push",
+    "en": "Duo Security Auto Push",
+    "zh_cn": "Duo Security 自动推送",
+    "zh_tw": "Duo Security 自動推送"
+  },
+  "scriptDescription": {
+    "": "Press \"Send Me a Push\" automatically for you",
+    "en": "Press \"Send Me a Push\" automatically for you",
+    "zh_cn": "自动按下 \"Send Me a Push\"",
+    "zh_tw": "自動按下 \"Send Me a Push\""
+  },
+  "author": "pionxzh",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test:type": "tsc --noEmit",
+    "test": "pnpm run test:type",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "vite": "^3.1.4",
+    "vite-plugin-monkey": "^2.7.3"
+  }
+}

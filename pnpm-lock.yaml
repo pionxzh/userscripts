@@ -38,6 +38,14 @@ importers:
       vite: 3.1.4
       vite-plugin-monkey: 2.7.3_vite@3.1.4
 
+  packages/duo:
+    specifiers:
+      vite: ^3.1.4
+      vite-plugin-monkey: ^2.7.3
+    devDependencies:
+      vite: 3.1.4
+      vite-plugin-monkey: 2.7.3_vite@3.1.4
+
   packages/juejin:
     specifiers:
       '@pionxzh/vite-plugin-define-env': workspace:*
