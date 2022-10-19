@@ -46,7 +46,7 @@ pionxzh/userscripts
 | [安装](https://greasyfork.org/scripts/383827-%E7%9F%A5%E4%B9%8E%E5%8A%A9%E6%89%8B) | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/zhihu.user.js) |
 
 
-### Duo Security Auto Push
+### [Duo Security Auto Push](https://greasyfork.org/scripts/453340-duo-security-auto-push)
   - 自动点击 Duo Security 的 Push 按钮
   - Click the Duo Security Push button automatically
 

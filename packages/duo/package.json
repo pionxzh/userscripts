@@ -7,14 +7,14 @@
   "scriptName": {
     "": "Duo Security Auto Push",
     "en": "Duo Security Auto Push",
-    "zh_cn": "Duo Security 自动推送",
-    "zh_tw": "Duo Security 自動推送"
+    "zh-CN": "Duo Security 自动推送",
+    "zh-TW": "Duo Security 自動推送"
   },
   "scriptDescription": {
     "": "Press \"Send Me a Push\" automatically for you",
     "en": "Press \"Send Me a Push\" automatically for you",
-    "zh_cn": "自动按下 \"Send Me a Push\"",
-    "zh_tw": "自動按下 \"Send Me a Push\""
+    "zh-CN": "自动按下 \"Send Me a Push\"",
+    "zh-TW": "自動按下 \"Send Me a Push\""
   },
   "author": "pionxzh",
   "license": "MIT",
