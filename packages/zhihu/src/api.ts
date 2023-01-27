@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/extensions
 import { GM_getValue, GM_setValue } from 'vite-plugin-monkey/dist/client'
 
 export interface BlockedUser {

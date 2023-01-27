@@ -16,7 +16,6 @@ function detectPage() {
 }
 
 (() => {
-    // eslint-disable-next-line no-console
     console.log(`[Juejin Plus] v${__VERSION__}`)
 
     detectPage()
