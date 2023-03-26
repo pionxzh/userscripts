@@ -110,7 +110,7 @@ function preprocessEnv(env: Record<string, any>) {
 }
 
 function envToDefine(env: Record<string, any>) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line unused-imports/no-unused-vars
     const { NODE_ENV, ...rest } = env
     return Object.entries(rest).reduce((acc, [key, value]) => {
         const val = typeof value === 'string' ? JSON.stringify(value) : value
