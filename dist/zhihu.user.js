@@ -1,19 +1,20 @@
 // ==UserScript==
 // @name         知乎助手
 // @namespace    pionxzh
-// @version      1.2.0
+// @version      1.2.1
 // @author       pionxzh
 // @description  自动屏蔽黑名单的所有评论与文章 | 去除知乎盐选 | 去除Live | 自动收起回答 | 取消外链跳转
 // @license      MIT
 // @icon         https://static.zhihu.com/heifetz/favicon.ico
 // @match        *.zhihu.com/*
-// @require      https://cdnjs.cloudflare.com/ajax/libs/sentinel-js/0.0.5/sentinel.min.js
+// @require      https://cdnjs.cloudflare.com/ajax/libs/sentinel-js/0.0.7/sentinel.min.js
+// @grant        GM_addStyle
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @run-at       document-start
 // ==/UserScript==
 
-(t=>{const n=document.createElement("style");n.dataset.source="vite-plugin-monkey",n.innerText=t,document.head.appendChild(n)})(`div.SearchResult-Card.__BLOCKED__ {
+(n=>{if(typeof GM_addStyle=="function"){GM_addStyle(n);return}const t=document.createElement("style");t.textContent=n,document.head.append(t)})(` div.SearchResult-Card.__BLOCKED__ {
   display: none !important;
 }
 
@@ -46,20 +47,14 @@ footer.Footer {
 
 .Question-sideColumn {
   display: none !important;
-}`);
+} `);
 
-(function(sentinel2) {
-  var _a, _b;
-  "use strict";
-  const _interopDefaultLegacy = (e) => e && typeof e === "object" && "default" in e ? e : { default: e };
-  const sentinel__default = /* @__PURE__ */ _interopDefaultLegacy(sentinel2);
-  var r = (_a = document.__monkeyWindow) != null ? _a : window;
-  r.GM;
-  r.unsafeWindow = (_b = r.unsafeWindow) != null ? _b : window;
-  r.unsafeWindow;
-  r.GM_info;
-  r.GM_cookie;
-  var u = (...e) => r.GM_setValue(...e), h = (...e) => r.GM_getValue(...e);
+(function (sentinel) {
+  'use strict';
+
+  var _GM_addStyle = /* @__PURE__ */ (() => typeof GM_addStyle != "undefined" ? GM_addStyle : void 0)();
+  var _GM_getValue = /* @__PURE__ */ (() => typeof GM_getValue != "undefined" ? GM_getValue : void 0)();
+  var _GM_setValue = /* @__PURE__ */ (() => typeof GM_setValue != "undefined" ? GM_setValue : void 0)();
   const BLOCKED_USER_KEY = "__zhihu_blocked_user__";
   async function fetchData(offset, limit) {
     try {
@@ -69,11 +64,11 @@ footer.Footer {
       if (paging.is_end)
         return data;
       const result = data.concat(await fetchData(offset + limit, limit));
-      u(BLOCKED_USER_KEY, result);
+      _GM_setValue(BLOCKED_USER_KEY, result);
       return result;
     } catch (error) {
       console.error("[Zhihu]", error);
-      return h(BLOCKED_USER_KEY, []);
+      return _GM_getValue(BLOCKED_USER_KEY, []);
     }
   }
   function getBlockedUser() {
@@ -81,7 +76,6 @@ footer.Footer {
     const limit = 20;
     return fetchData(offset, limit);
   }
-  const style = "";
   function onloadSafe(fn) {
     if (document.readyState === "complete") {
       fn();
@@ -109,7 +103,7 @@ footer.Footer {
   }
   async function blockByBlackList() {
     const blockedUserList = await getBlockedUser();
-    insertStyle(blockedUserList.map((user) => `
+    _GM_addStyle(blockedUserList.map((user) => `
 // 屏蔽回答内容
 div.css-194v73m:has(a[href="https://www.zhihu.com/people/${user.id}"] > img[alt="${user.name}"]) div.CommentContent,
 div.css-8j5fyx:has(a[href="https://www.zhihu.com/people/${user.id}"] > img[alt="${user.name}"]) div.CommentContent {
@@ -136,19 +130,19 @@ div.SearchResult-Card:has(div.AuthorInfo > meta[itemprop="name"][content="${user
     display: none !important;
 }
 `.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, "")).join(""));
-    sentinel__default.default.on('div.SearchResult-Card span[itemprop="articleBody"] > b[data-first-child]', (el) => {
-      var _a2;
+    sentinel.on('div.SearchResult-Card span[itemprop="articleBody"] > b[data-first-child]', (el) => {
+      var _a;
       const username = el.textContent;
       if (blockedUserList.some((user) => user.name === username)) {
-        (_a2 = el.closest("div.SearchResult-Card")) == null ? void 0 : _a2.classList.add("__BLOCKED__");
+        (_a = el.closest("div.SearchResult-Card")) == null ? void 0 : _a.classList.add("__BLOCKED__");
       }
     });
   }
   function blockVideoAnswer() {
-    sentinel__default.default.on("div.SearchResult-Card[data-za-extra-module]", (el) => {
-      var _a2, _b2;
+    sentinel.on("div.SearchResult-Card[data-za-extra-module]", (el) => {
+      var _a, _b;
       const extraModule = JSON.parse(el.dataset.zaExtraModule || "{}");
-      if (((_b2 = (_a2 = extraModule == null ? void 0 : extraModule.card) == null ? void 0 : _a2.content) == null ? void 0 : _b2.type) === "Zvideo") {
+      if (((_b = (_a = extraModule == null ? void 0 : extraModule.card) == null ? void 0 : _a.content) == null ? void 0 : _b.type) === "Zvideo") {
         el.classList.add("__BLOCKED__");
       }
     });
@@ -174,7 +168,7 @@ div.SearchResult-Card:has(div.AuthorInfo > meta[itemprop="name"][content="${user
     };
     document.querySelectorAll(expandButtonSelector).forEach(collapseAnswer);
     document.querySelectorAll(collapseButtonSelector).forEach(collapseAnswer);
-    sentinel__default.default.on(collapseButtonSelector, collapseAnswer);
+    sentinel.on(collapseButtonSelector, collapseAnswer);
   }
   function adjustRelatedQuestions() {
     if (!url.pathname.startsWith("/question/"))
@@ -238,11 +232,7 @@ div.SearchResult-Card:has(div.AuthorInfo > meta[itemprop="name"][content="${user
         el.href = target;
     };
     document.querySelectorAll(selector).forEach(removeRedirection);
-    sentinel__default.default.on(selector, removeRedirection);
+    sentinel.on(selector, removeRedirection);
   }
-  function insertStyle(content) {
-    const style2 = document.createElement("style");
-    style2.innerHTML = content;
-    document.head.appendChild(style2);
-  }
+
 })(sentinel);

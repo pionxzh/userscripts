@@ -4,7 +4,7 @@
 // @name:zh-CN         Duo Security 自动推送
 // @name:zh-TW         Duo Security 自動推送
 // @namespace          pionxzh
-// @version            1.0.1
+// @version            1.0.2
 // @author             pionxzh
 // @description        Press "Send Me a Push" automatically for you
 // @description:en     Press "Send Me a Push" automatically for you
@@ -16,8 +16,9 @@
 // @match              https://*.duosecurity.com/frame/web/v1/auth?
 // ==/UserScript==
 
-(function() {
-  "use strict";
+(function () {
+  'use strict';
+
   function onloadSafe(fn) {
     if (document.readyState === "complete") {
       fn();
@@ -30,4 +31,5 @@
     if (authButton)
       authButton.click();
   });
+
 })();

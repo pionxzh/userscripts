@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dcard 助手
 // @namespace    pionxzh
-// @version      1.1.0
+// @version      1.1.1
 // @author       pionxzh
 // @description  完整去廣告、移除登入彈窗、隱藏下方登入 Banner
 // @license      MIT
@@ -9,9 +9,10 @@
 // @match        https://www.dcard.tw/*
 // @exclude      https://id.dcard.tw/oauth/*
 // @exclude      https://www.dcard.tw/my/*
+// @grant        GM_addStyle
 // ==/UserScript==
 
-(t=>{const n=document.createElement("style");n.dataset.source="vite-plugin-monkey",n.innerText=t,document.head.appendChild(n)})(`body {
+(n=>{if(typeof GM_addStyle=="function"){GM_addStyle(n);return}const t=document.createElement("style");t.textContent=n,document.head.append(t)})(` body {
   overflow: unset !important;
 }
 
@@ -28,14 +29,14 @@ div[id^=div-gpt-ad] {
 aside > div:last-child {
   position: absolute;
   bottom: 0;
-}`);
+} `);
 
-(function() {
-  "use strict";
-  const style = "";
+(function () {
+  'use strict';
+
   const authUrl = "https://www.dcard.tw/service/_auth/authorize";
   (() => {
-    console.log("[Dcard \u52A9\u624B] is running...");
+    console.log("[Dcard 助手] is running...");
     loginModalRemover();
   })();
   function isLoggedIn() {
@@ -47,7 +48,7 @@ aside > div:last-child {
       return;
     const portalEl = document.querySelector(".__portal");
     if (!portalEl) {
-      console.log("[Dcard \u52A9\u624B] Failed to find portal element");
+      console.log("[Dcard 助手] Failed to find portal element");
       return;
     }
     const observe = new MutationObserver((mutations) => {
@@ -65,4 +66,5 @@ aside > div:last-child {
     });
     observe.observe(portalEl, { childList: true });
   }
+
 })();
