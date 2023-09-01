@@ -21,11 +21,13 @@ export default defineConfig({
             },
             build: {
                 fileName: 'duo.user.js',
-                minifyCss: false,
             },
             server: {
                 open: true,
             },
         }),
     ],
+    build: {
+        cssMinify: false,
+    },
 })

@@ -1,4 +1,5 @@
 import sentinel from 'sentinel-js'
+import { GM_addStyle } from 'vite-plugin-monkey/dist/client'
 import { getBlockedUser } from './api'
 import './style.scss'
 import { onloadSafe } from './utils'
@@ -43,7 +44,7 @@ function purifyDocumentTitle() {
 async function blockByBlackList() {
     const blockedUserList = await getBlockedUser()
 
-    insertStyle(blockedUserList.map(user => `
+    GM_addStyle(blockedUserList.map(user => `
 // 屏蔽回答内容
 div.css-194v73m:has(a[href="https://www.zhihu.com/people/${user.id}"] > img[alt="${user.name}"]) div.CommentContent,
 div.css-8j5fyx:has(a[href="https://www.zhihu.com/people/${user.id}"] > img[alt="${user.name}"]) div.CommentContent {
@@ -184,10 +185,4 @@ function removeExternalLinkRedirection() {
     }
     document.querySelectorAll<HTMLAnchorElement>(selector).forEach(removeRedirection)
     sentinel.on(selector, removeRedirection)
-}
-
-function insertStyle(content: string) {
-    const style = document.createElement('style')
-    style.innerHTML = content
-    document.head.appendChild(style)
 }

@@ -27,7 +27,7 @@
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "vite": "^4.2.1",
-    "vite-plugin-monkey": "^2.12.1"
+    "vite": "^4.4.9",
+    "vite-plugin-monkey": "^3.5.0"
   }
 }

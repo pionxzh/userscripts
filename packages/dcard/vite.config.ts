@@ -23,11 +23,13 @@ export default defineConfig({
             },
             build: {
                 fileName: 'dcard.user.js',
-                minifyCss: false,
             },
             server: {
                 open: true,
             },
         }),
     ],
+    build: {
+        cssMinify: false,
+    },
 })

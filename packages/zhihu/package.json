@@ -16,11 +16,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@pionxzh/vite-plugin-define-env": "workspace:*",
-    "sentinel-js": "^0.0.5",
-    "vite-plugin-monkey": "^2.12.1"
+    "sentinel-js": "^0.0.7",
+    "vite-plugin-monkey": "^3.5.0"
   },
   "devDependencies": {
-    "vite": "^4.2.1"
+    "vite": "^4.4.9"
   }
 }

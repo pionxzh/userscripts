@@ -29,11 +29,13 @@ export default defineConfig({
             },
             build: {
                 fileName: 'juejin.user.js',
-                minifyCss: false,
             },
             server: {
                 open: true,
             },
         }),
     ],
+    build: {
+        cssMinify: false,
+    },
 })
