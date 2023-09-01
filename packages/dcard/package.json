@@ -1,7 +1,7 @@
 {
   "name": "@pionxzh/dcard",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "title": "Dcard 助手",
   "description": "完整去廣告、移除登入彈窗、隱藏下方登入 Banner",
