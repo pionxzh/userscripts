@@ -1,4 +1,5 @@
-import path from 'path'
+import path from 'node:path'
+import process from 'node:process'
 import chalk from 'chalk'
 import dotenv from 'dotenv'
 import fg from 'fast-glob'
@@ -27,7 +28,7 @@ const defaultConfig: EnvDefinePluginConfig = {
 
 const resolve = (...args: string[]) => path.resolve(process.cwd(), ...args)
 
-export const envDefinePlugin = (config: EnvConfigInput = {}): Plugin => {
+export function envDefinePlugin(config: EnvConfigInput = {}): Plugin {
     const pluginConfig: EnvDefinePluginConfig = { ...defaultConfig, ...config }
     const { mode } = pluginConfig
     const envFilePath = resolve(`.env.${mode}`)
