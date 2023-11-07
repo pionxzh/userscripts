@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.7.1",
+  "packageManager": "pnpm@8.10.2",
   "author": "pionxzh",
   "license": "MIT",
   "engines": {
@@ -27,17 +27,17 @@
   },
   "devDependencies": {
     "@pionxzh/eslint-config": "0.3.0",
-    "@types/node": "^18.15.10",
+    "@types/node": "^20.8.10",
     "commitizen": "^4.3.0",
-    "cpy-cli": "^4.2.0",
+    "cpy-cli": "^5.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.36.0",
+    "eslint": "^8.53.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
-    "rimraf": "^4.4.1",
-    "sass": "^1.60.0",
-    "turbo": "^1.8.5",
-    "typescript": "^5.0.2"
+    "lint-staged": "^15.0.2",
+    "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
+    "turbo": "^1.10.16",
+    "typescript": "^5.2.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "pnpm exec eslint"
