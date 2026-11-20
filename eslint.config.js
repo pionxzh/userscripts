@@ -1,4 +1,4 @@
-import pionxzh from '@pionxzh/eslint-config'
+import { pionxzh } from '@pionxzh/eslint-config'
 
 export default pionxzh(
     {

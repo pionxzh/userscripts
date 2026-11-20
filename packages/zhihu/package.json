@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "sentinel-js": "^0.0.7",
-    "vite-plugin-monkey": "^3.5.0"
+    "vite-plugin-monkey": "^8.1.1"
   },
   "devDependencies": {
-    "vite": "^4.4.9"
+    "vite": "^8.3.8"
   }
 }

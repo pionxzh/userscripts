@@ -3,11 +3,11 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@10.18.0",
   "author": "pionxzh",
   "license": "MIT",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   },
   "config": {
     "commitizen": {
@@ -23,23 +23,26 @@
     "cz": "cz",
     "clean": "rimraf ./dist",
     "release:ci": "cpy packages/**/dist/*.user.js dist --flat",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@pionxzh/eslint-config": "1.0.1",
-    "@types/node": "^20.8.10",
-    "commitizen": "^4.3.0",
-    "cpy-cli": "^5.0.0",
+    "@pionxzh/eslint-config": "2.0.2",
+    "@types/node": "^22.10.0",
+    "commitizen": "^4.3.2",
+    "cpy-cli": "^7.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.53.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.0.2",
-    "rimraf": "^5.0.5",
-    "sass": "^1.69.5",
-    "turbo": "^1.10.16",
-    "typescript": "^5.2.2"
+    "eslint": "^9.17.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.1",
+    "rimraf": "^6.1.4",
+    "sass": "^1.108.2",
+    "turbo": "^2.11.13",
+    "typescript": "^5.9.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "pnpm exec eslint"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "@parcel/watcher"]
   }
 }
