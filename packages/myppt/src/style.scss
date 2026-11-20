@@ -1,0 +1,39 @@
+// 注入到第三方頁面，刻意只對自己的元素套用間距規則（不動 host 的 :root）
+.myppt-dl-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483647;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #ff5162;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-autospace: normal;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+}
+
+.myppt-status {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 2147483647;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  text-autospace: normal;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%);
+}

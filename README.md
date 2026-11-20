@@ -53,3 +53,13 @@ pionxzh/userscripts
 | Greasyfork 源                                                        | GitHub 源                                                                           |
 | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | [安装](https://greasyfork.org/scripts/453340-duo-security-auto-push) | [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/duo.user.js) |
+
+
+### MyPPT / LURL 助手
+  - 自动关闭年龄弹窗（写入 domain cookie，不再弹）
+  - 以发布日期 / 今天日期自动尝试密码解锁
+  - 一键下载原图 / 影片（直取原始档，不经 canvas 压缩）
+
+| GitHub 源                                                                             |
+| ------------------------------------------------------------------------------------- |
+| [安装](https://raw.githubusercontent.com/pionxzh/userscripts/main/dist/myppt.user.js) |

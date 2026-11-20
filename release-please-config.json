@@ -13,6 +13,9 @@
     },
     "packages/duo": {
       "component": "duo"
+    },
+    "packages/myppt": {
+      "component": "myppt"
     }
   }
 }

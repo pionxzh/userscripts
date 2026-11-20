@@ -1,0 +1,22 @@
+{
+  "name": "@pionxzh/myppt",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "title": "MyPPT / LURL 助手",
+  "description": "自動關年齡彈窗、以發布日期/今天日期自動試密碼解鎖，並一鍵下載原圖/影片",
+  "author": "pionxzh",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test:type": "tsc --noEmit",
+    "test": "pnpm run test:type",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "vite": "^8.3.8",
+    "vite-plugin-monkey": "^8.1.1"
+  }
+}
