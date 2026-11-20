@@ -1,7 +1,7 @@
 {
   "name": "@pionxzh/myppt",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "title": "MyPPT / LURL 助手",
   "description": "自動關年齡彈窗、以發布日期/今天日期自動試密碼解鎖，並一鍵下載原圖/影片",
