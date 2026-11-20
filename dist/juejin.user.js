@@ -11,59 +11,33 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
-(n=>{if(typeof GM_addStyle=="function"){GM_addStyle(n);return}const e=document.createElement("style");e.textContent=n,document.head.append(e)})(` @charset "UTF-8";
-.tablead,
-.creator-item,
-.vip-entry,
-.special-activity,
-.sidebar-bd-entry,
-.app-download-sidebar-block,
-.login-guide-popup,
-.recommend-box,
-button[title=\u5EFA\u8BAE\u53CD\u9988] {
-  display: none !important;
-}
-
-body[data-juejin-page=main] .item-login-wrap,
-body[data-juejin-page=main] .banner-block,
-body[data-juejin-page=main] .sticky-block,
-body[data-juejin-page=main] .entry-list > .item > .advertisement {
-  display: none !important;
-}
-
-body[data-juejin-page=article] .wechat-banner,
-body[data-juejin-page=article] .extension-banner,
-body[data-juejin-page=article] .guide-collect-popover {
-  display: none !important;
-}
-
-body[data-juejin-page=search] a.search[data-book-id] {
-  display: none !important;
-} `);
-
-(function () {
-  'use strict';
-
-  function detectPage() {
-    const url = new URL(window.location.href);
-    let page = "main";
-    if (url.pathname === "/post")
-      page = "post";
-    else if (url.pathname === "/search") {
-      const type = url.searchParams.get("type") ?? "0";
-      if (type === "12")
-        page = "search-course";
-      else
-        page = "search";
-    }
-    document.body.setAttribute("data-juejin-page", page);
-  }
-  (() => {
-    console.log(`[Juejin Plus] v${"1.0.1"}`);
-    detectPage();
-    window.addEventListener("popstate", () => {
-      detectPage();
-    });
-  })();
-
+(function() {
+	"use strict";
+	var s = new Set();
+	var _css = async (t) => {
+		if (s.has(t)) return;
+		s.add(t);
+		((c) => {
+			if (typeof GM_addStyle === "function") GM_addStyle(c);
+			else (document.head || document.documentElement).appendChild(document.createElement("style")).append(c);
+		})(t);
+	};
+	_css("@charset \"UTF-8\";\n.tablead,\n.creator-item,\n.vip-entry,\n.special-activity,\n.sidebar-bd-entry,\n.app-download-sidebar-block,\n.login-guide-popup,\n.recommend-box,\nbutton[title=建议反馈] {\n  display: none !important;\n}\n\nbody[data-juejin-page=main] .item-login-wrap,\nbody[data-juejin-page=main] .banner-block,\nbody[data-juejin-page=main] .sticky-block,\nbody[data-juejin-page=main] .entry-list > .item > .advertisement {\n  display: none !important;\n}\n\nbody[data-juejin-page=article] .wechat-banner,\nbody[data-juejin-page=article] .extension-banner,\nbody[data-juejin-page=article] .guide-collect-popover {\n  display: none !important;\n}\n\nbody[data-juejin-page=search] a.search[data-book-id] {\n  display: none !important;\n}");
+	function detectPage() {
+		const url = new URL(window.location.href);
+		let page = "main";
+		if (url.pathname === "/post") page = "post";
+		else if (url.pathname === "/search") {
+			if ((url.searchParams.get("type") ?? "0") === "12") page = "search-course";
+			else page = "search";
+		}
+		document.body.setAttribute("data-juejin-page", page);
+	}
+	(() => {
+		console.log(`[Juejin Plus] v1.0.1`);
+		detectPage();
+		window.addEventListener("popstate", () => {
+			detectPage();
+		});
+	})();
 })();

@@ -16,20 +16,14 @@
 // @match              https://*.duosecurity.com/frame/web/v1/auth?
 // ==/UserScript==
 
-(function () {
-  'use strict';
-
-  function onloadSafe(fn) {
-    if (document.readyState === "complete") {
-      fn();
-    } else {
-      window.addEventListener("load", fn);
-    }
-  }
-  onloadSafe(() => {
-    const authButton = document.querySelector(".push-label button.auth-button");
-    if (authButton)
-      authButton.click();
-  });
-
+(function() {
+	"use strict";
+	function onloadSafe(fn) {
+		if (document.readyState === "complete") fn();
+		else window.addEventListener("load", fn);
+	}
+	onloadSafe(() => {
+		const authButton = document.querySelector(".push-label button.auth-button");
+		if (authButton) authButton.click();
+	});
 })();

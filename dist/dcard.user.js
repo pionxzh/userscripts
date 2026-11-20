@@ -12,59 +12,41 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
-(n=>{if(typeof GM_addStyle=="function"){GM_addStyle(n);return}const t=document.createElement("style");t.textContent=n,document.head.append(t)})(` body {
-  overflow: unset !important;
-}
-
-.__portal > div:not(:has(div[data-testid])) {
-  display: none;
-}
-
-aside > div[style*="min-height:"],
-section div[data-key|=ad],
-div[id^=div-gpt-ad] {
-  display: none;
-}
-
-aside > div:last-child {
-  position: absolute;
-  bottom: 0;
-} `);
-
-(function () {
-  'use strict';
-
-  const authUrl = "https://www.dcard.tw/service/_auth/authorize";
-  (() => {
-    console.log("[Dcard 助手] is running...");
-    loginModalRemover();
-  })();
-  function isLoggedIn() {
-    const links = Array.from(document.querySelectorAll('div[role="navigation"] > a'));
-    return !links.some((link) => link.href.startsWith(authUrl));
-  }
-  function loginModalRemover() {
-    if (isLoggedIn())
-      return;
-    const portalEl = document.querySelector(".__portal");
-    if (!portalEl) {
-      console.log("[Dcard 助手] Failed to find portal element");
-      return;
-    }
-    const observe = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === "childList") {
-          mutation.addedNodes.forEach((node) => {
-            const el = node;
-            const iframe = el.querySelector("iframe");
-            if (iframe && iframe.src.startsWith(authUrl)) {
-              el.style.display = "none";
-            }
-          });
-        }
-      });
-    });
-    observe.observe(portalEl, { childList: true });
-  }
-
+(function() {
+	"use strict";
+	var s = new Set();
+	var _css = async (t) => {
+		if (s.has(t)) return;
+		s.add(t);
+		((c) => {
+			if (typeof GM_addStyle === "function") GM_addStyle(c);
+			else (document.head || document.documentElement).appendChild(document.createElement("style")).append(c);
+		})(t);
+	};
+	_css("body {\n  overflow: unset !important;\n}\n\n.__portal > div:not(:has(div[data-testid])) {\n  display: none;\n}\n\naside > div[style*=\"min-height:\"],\nsection div[data-key|=ad],\ndiv[id^=div-gpt-ad] {\n  display: none;\n}\n\naside > div:last-child {\n  position: absolute;\n  bottom: 0;\n}");
+	var authUrl = "https://www.dcard.tw/service/_auth/authorize";
+	(() => {
+		console.log("[Dcard 助手] is running...");
+		loginModalRemover();
+	})();
+	function isLoggedIn() {
+		return !Array.from(document.querySelectorAll("div[role=\"navigation\"] > a")).some((link) => link.href.startsWith(authUrl));
+	}
+	function loginModalRemover() {
+		if (isLoggedIn()) return;
+		const portalEl = document.querySelector(".__portal");
+		if (!portalEl) {
+			console.log("[Dcard 助手] Failed to find portal element");
+			return;
+		}
+		new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (mutation.type === "childList") mutation.addedNodes.forEach((node) => {
+					const el = node;
+					const iframe = el.querySelector("iframe");
+					if (iframe && iframe.src.startsWith(authUrl)) el.style.display = "none";
+				});
+			});
+		}).observe(portalEl, { childList: true });
+	}
 })();
